@@ -1,0 +1,4 @@
+# left out testdb directory
+testdb*
+*.prof
+db-benchmark.test

@@ -7,7 +7,6 @@ import (
 	"github.com/cosmos/cosmos-sdk/store/iavl"
 	storetypes "github.com/cosmos/cosmos-sdk/store/types"
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/tendermint/tendermint/libs/log"
 	dbm "github.com/tendermint/tm-db"
 )
 
@@ -36,10 +35,8 @@ func GetIAVLKVStore() (storetypes.CommitKVStore, error) {
 		return nil, err
 	}
 
-	logger := log.NewTMLogger(log.NewSyncWriter(os.Stdout))
-	disableFastNode := true
 	lazyLoad := false
-	kvStore, err := iavl.LoadStore(db, logger, storetypes.NewKVStoreKey("test"), storetypes.CommitID{}, lazyLoad, iavl.DefaultIAVLCacheSize, disableFastNode)
+	kvStore, err := iavl.LoadStore(db, storetypes.CommitID{}, lazyLoad, iavl.DefaultIAVLCacheSize)
 	if err != nil {
 		return nil, err
 	}

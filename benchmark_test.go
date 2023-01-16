@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/classic-terra/classic/simnode"
+	"github.com/classic-terra/db-benchmark/simnode"
 	storetypes "github.com/cosmos/cosmos-sdk/store/types"
 )
 

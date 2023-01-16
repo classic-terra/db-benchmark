@@ -1,6 +1,6 @@
 {
-  "genesis_time": "2023-01-11T05:12:42.899854Z",
-  "chain_id": "baby-1",
+  "genesis_time": "2023-01-14T03:26:24.290076Z",
+  "chain_id": "test",
   "initial_height": "1",
   "consensus_params": {
     "block": {
@@ -33,7 +33,14 @@
       "accounts": [
         {
           "@type": "/cosmos.auth.v1beta1.BaseAccount",
-          "address": "baby1xprxxz5rnujaern8u2kjz583j86jkc3l3q00gd",
+          "address": "terra12cwdccyp3wnhtcfr74q6wnlke5luqv06e57f80",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "terra1tk4uca2rf5fxllj33gvf9t4w7xyswdc2fhawhl",
           "pub_key": null,
           "account_number": "0",
           "sequence": "0"
@@ -50,28 +57,39 @@
       },
       "balances": [
         {
-          "address": "baby1xprxxz5rnujaern8u2kjz583j86jkc3l3q00gd",
+          "address": "terra12cwdccyp3wnhtcfr74q6wnlke5luqv06e57f80",
           "coins": [
             {
-              "denom": "ubaby",
+              "denom": "uluna",
+              "amount": "1000000000000"
+            }
+          ]
+        },
+        {
+          "address": "terra1tk4uca2rf5fxllj33gvf9t4w7xyswdc2fhawhl",
+          "coins": [
+            {
+              "denom": "uluna",
               "amount": "1000000000000"
             }
           ]
         }
       ],
-      "supply": [],
+      "supply": [
+        {
+          "denom": "uluna",
+          "amount": "2000000000000"
+        }
+      ],
       "denom_metadata": []
     },
     "capability": {
       "index": "1",
       "owners": []
     },
-    "claim": {
-      "params": {}
-    },
     "crisis": {
       "constant_fee": {
-        "denom": "ubaby",
+        "denom": "uluna",
         "amount": "1000"
       }
     },
@@ -108,7 +126,7 @@
               {
                 "@type": "/cosmos.staking.v1beta1.MsgCreateValidator",
                 "description": {
-                  "moniker": "localtestnet",
+                  "moniker": "moniker",
                   "identity": "",
                   "website": "",
                   "security_contact": "",
@@ -120,19 +138,19 @@
                   "max_change_rate": "0.010000000000000000"
                 },
                 "min_self_delegation": "1",
-                "delegator_address": "baby1xprxxz5rnujaern8u2kjz583j86jkc3l3q00gd",
-                "validator_address": "babyvaloper1xprxxz5rnujaern8u2kjz583j86jkc3lmr7pw0",
+                "delegator_address": "terra12cwdccyp3wnhtcfr74q6wnlke5luqv06e57f80",
+                "validator_address": "terravaloper12cwdccyp3wnhtcfr74q6wnlke5luqv06emj5hu",
                 "pubkey": {
                   "@type": "/cosmos.crypto.ed25519.PubKey",
-                  "key": "rjuyQ8IUaGng6MKL52KCf3CWyheTvkRpQvyp0WHn8R4="
+                  "key": "3LpO8kvJjgjrbDnyr2XjDqInsNCaCfmGHEGNgMm+X0k="
                 },
                 "value": {
-                  "denom": "ubaby",
+                  "denom": "uluna",
                   "amount": "1000000"
                 }
               }
             ],
-            "memo": "d2d9dc0435aad42089a00274af5324fb239bc073@192.168.1.2:26656",
+            "memo": "12eb32b63f897d8d8aebcfd16ce6f20c64d9c39d@192.168.1.2:26656",
             "timeout_height": "0",
             "extension_options": [],
             "non_critical_extension_options": []
@@ -142,7 +160,7 @@
               {
                 "public_key": {
                   "@type": "/cosmos.crypto.secp256k1.PubKey",
-                  "key": "Aw1Pl71gi5x8/liA+RyqkM5WT67DZPXn817zkbAqVlax"
+                  "key": "Ag/nFLpZLLFCB/GQbJckh4kAZXn+JPDdXyc/10MGuKxG"
                 },
                 "mode_info": {
                   "single": {
@@ -160,7 +178,7 @@
             }
           },
           "signatures": [
-            "aY+ZT7nlIXAaNBF9bB9oh2iE7DEFooHuzVcb19LdO9tCkrPncyX3pzuDkcu2+OyZM1HyzbycxrscSHjJtWOkzA=="
+            "PqrM+UcsiLLO3lB1+Shy1ykgKR1xk2+BWLqAOG72L7wJ4hwrnZ4HhAUXLri5Jnm2h7bPV/fHHZ8X16XZJY99fQ=="
           ]
         }
       ]
@@ -173,14 +191,14 @@
       "deposit_params": {
         "min_deposit": [
           {
-            "denom": "ubaby",
-            "amount": "10000000"
+            "denom": "uluna",
+            "amount": "1000000"
           }
         ],
         "max_deposit_period": "172800s"
       },
       "voting_params": {
-        "voting_period": "172800s"
+        "voting_period": "50s"
       },
       "tally_params": {
         "quorum": "0.334000000000000000",
@@ -221,13 +239,21 @@
         "next_channel_sequence": "0"
       }
     },
+    "market": {
+      "params": {
+        "base_pool": "1000000000000.000000000000000000",
+        "pool_recovery_period": "14400",
+        "min_stability_spread": "0.020000000000000000"
+      },
+      "terra_pool_delta": "0.000000000000000000"
+    },
     "mint": {
       "minter": {
         "inflation": "0.130000000000000000",
         "annual_provisions": "0.000000000000000000"
       },
       "params": {
-        "mint_denom": "ubaby",
+        "mint_denom": "uluna",
         "inflation_rate_change": "0.130000000000000000",
         "inflation_max": "0.200000000000000000",
         "inflation_min": "0.070000000000000000",
@@ -235,24 +261,40 @@
         "blocks_per_year": "6311520"
       }
     },
-    "monitoringp": {
-      "port_id": "monitoringp",
-      "consumerClientID": null,
-      "connectionChannelID": null,
-      "monitoringInfo": null,
+    "oracle": {
       "params": {
-        "lastBlockHeight": "1",
-        "consumerChainID": "spn-1",
-        "consumerConsensusState": {
-          "nextValidatorsHash": "",
-          "timestamp": "",
-          "root": {
-            "hash": ""
+        "vote_period": "5",
+        "vote_threshold": "0.500000000000000000",
+        "reward_band": "0.020000000000000000",
+        "reward_distribution_window": "5256000",
+        "whitelist": [
+          {
+            "name": "ukrw",
+            "tobin_tax": "0.002500000000000000"
+          },
+          {
+            "name": "usdr",
+            "tobin_tax": "0.002500000000000000"
+          },
+          {
+            "name": "uusd",
+            "tobin_tax": "0.002500000000000000"
+          },
+          {
+            "name": "umnt",
+            "tobin_tax": "0.020000000000000000"
           }
-        },
-        "consumerUnbondingPeriod": "1814400",
-        "consumerRevisionHeight": "1"
-      }
+        ],
+        "slash_fraction": "0.000100000000000000",
+        "slash_window": "100800",
+        "min_valid_per_window": "0.050000000000000000"
+      },
+      "feeder_delegations": [],
+      "exchange_rates": [],
+      "miss_counters": [],
+      "aggregate_exchange_rate_prevotes": [],
+      "aggregate_exchange_rate_votes": [],
+      "tobin_taxes": []
     },
     "params": null,
     "slashing": {
@@ -272,7 +314,7 @@
         "max_validators": 100,
         "max_entries": 7,
         "historical_entries": 10000,
-        "bond_denom": "ubaby"
+        "bond_denom": "uluna"
       },
       "last_total_power": "0",
       "last_validator_powers": [],
@@ -290,7 +332,51 @@
         "receive_enabled": true
       }
     },
+    "treasury": {
+      "params": {
+        "tax_policy": {
+          "rate_min": "0.000500000000000000",
+          "rate_max": "0.010000000000000000",
+          "cap": {
+            "denom": "usdr",
+            "amount": "1000000"
+          },
+          "change_rate_max": "0.000250000000000000"
+        },
+        "reward_policy": {
+          "rate_min": "0.050000000000000000",
+          "rate_max": "0.500000000000000000",
+          "cap": {
+            "denom": "unused",
+            "amount": "0"
+          },
+          "change_rate_max": "0.025000000000000000"
+        },
+        "seigniorage_burden_target": "0.670000000000000000",
+        "mining_increment": "1.070000000000000000",
+        "window_short": "4",
+        "window_long": "52",
+        "window_probation": "12"
+      },
+      "tax_rate": "0.001000000000000000",
+      "reward_weight": "0.050000000000000000",
+      "tax_caps": [],
+      "tax_proceeds": [],
+      "epoch_initial_issuance": [],
+      "epoch_states": []
+    },
     "upgrade": {},
-    "vesting": {}
+    "vesting": null,
+    "wasm": {
+      "params": {
+        "max_contract_size": "614400",
+        "max_contract_gas": "20000000",
+        "max_contract_msg_size": "4096"
+      },
+      "last_code_id": "0",
+      "last_instance_id": "0",
+      "codes": [],
+      "contracts": []
+    }
   }
 }

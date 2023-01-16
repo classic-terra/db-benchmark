@@ -1,0 +1,1 @@
+put genesis.json into this folder

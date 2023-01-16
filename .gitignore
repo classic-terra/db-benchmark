@@ -3,4 +3,3 @@ testdb*
 *.prof
 db-benchmark.test
 classic.test
-data/

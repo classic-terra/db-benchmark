@@ -43,6 +43,8 @@ func TendermintHandleGenesis() (dbm.DB, sm.State, *tmtypes.GenesisDoc, error) {
 	config.RootDir = rootDir
 	genesisDocProvider := node.DefaultGenesisDocProviderFunc(config)
 
+	fmt.Println("loading genesis state")
+
 	state, genDoc, err := node.LoadStateFromDBOrGenesisDocProvider(db, genesisDocProvider)
 	if err != nil {
 		return nil, sm.State{}, nil, err

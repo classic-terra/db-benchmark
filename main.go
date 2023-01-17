@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"net/http"
 	_ "net/http/pprof"
 	"sync"
@@ -22,5 +23,6 @@ func main() {
 func program(wg *sync.WaitGroup) {
 	defer wg.Done()
 
-	simnode.GetNode()
+	_, err := simnode.GetNode()
+	fmt.Println(err)
 }
